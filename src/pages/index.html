@@ -1,0 +1,232 @@
+<!--meta {"title": "Symbolon · 사내 서비스용 게이트웨이와 로그인 서버", "description": "Symbolon Gateway는 사내 웹 서비스에 HTTPS와 로그인, 그룹별 접근 권한을 적용하는 게이트웨이입니다. 회사 계정과 그룹은 로그인 서버인 Symbolon ID로 관리합니다. 지금은 1.0 베타입니다.", "nav": ""} -->
+<section class="sec ink hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="reveal">
+      <p class="hero__names"><b>Symbolon Gateway</b> 심볼론 게이트웨이 &nbsp; <b>Symbolon ID</b> 심볼론 ID</p>
+      <h1 id="hero-title" class="display display--sm">코드를 고치지 않고<br>사내 서비스에<br><span class="l2">로그인을 적용합니다</span></h1>
+      <p class="lead">Symbolon Gateway는 사내 웹 서비스 앞단에서 HTTPS 연결과 로그인, 그룹별 접근 권한 확인을 대신 처리합니다. 회사 계정과 그룹은 Symbolon ID에서 관리하면 되고, 이미 쓰고 있는 로그인 서버가 있다면 그 서버에 연결해도 됩니다.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="gateway.html">제품 살펴보기</a>
+        <a class="btn btn--ghost" href="resources.html">제품소개서 받기</a>
+      </div>
+      <p class="hero__beta"><span class="pill">1.0 베타</span>지금은 평가와 검증을 위한 베타 버전입니다.</p>
+    </div>
+    <div class="token-art" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">도입하면 달라지는 점</p>
+        <h2 id="why-title" class="h1">사내 도구마다 따로 만들던<br>로그인을 한곳에서 관리합니다</h2>
+      </div>
+      <p class="lead">회사 안에서만 쓰는 운영 도구나 대시보드는 IP 주소로 바로 접속하는 경우가 많습니다. 로그인이 아예 없거나 도구마다 계정이 따로 있어서, 누가 어디에 접속할 수 있는지 한눈에 파악하기 어렵습니다.</p>
+    </div>
+    <div class="urls reveal reveal-d1">
+      <p class="urlbar urlbar--before">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ff9a88" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.2v.1"/></svg>
+        <span class="addr">http://서버 주소:포트</span>
+        <span class="tags"><span>암호화 없음</span><span>주소만 알면 누구나 접속</span><span>도구마다 따로 로그인</span></span>
+      </p>
+      <p class="bridge"><svg viewBox="0 0 12 42" preserveAspectRatio="none" aria-hidden="true"><path d="M6,0 L6,42" fill="none" stroke="#5fe0d2" stroke-width="1.4"/></svg>Symbolon Gateway를 적용한 뒤</p>
+      <p class="urlbar urlbar--after">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5fe0d2" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+        <span class="addr">https://dashboard.corp.example</span>
+        <span class="tags"><span>HTTPS</span><span>허용된 그룹만 접속</span><span>회사 계정으로 한 번 로그인</span></span>
+      </p>
+    </div>
+    <div class="points mt-xl reveal reveal-d2">
+      <div class="point"><h3 class="h3">사내 도메인과 HTTPS</h3><p>서비스마다 사내 도메인을 연결하고 HTTPS로 접속하게 합니다. 인증서는 자동으로 발급되고 만료되기 전에 알아서 갱신됩니다.</p></div>
+      <div class="point"><h3 class="h3">그룹별 접근 권한</h3><p>서비스마다 접속을 허용할 그룹을 정합니다. 허용된 그룹에 속한 사람만 서비스를 쓸 수 있습니다.</p></div>
+      <div class="point"><h3 class="h3">서비스 코드는 그대로</h3><p>로그인과 권한 확인은 게이트웨이가 처리합니다. 기존 서비스에 로그인 기능을 새로 만들 필요가 없습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">동작 방식</p>
+        <h2 id="how-title" class="h1">사용자가 서비스에<br>접속하는 과정</h2>
+      </div>
+      <p class="lead">사용자는 평소처럼 사내 주소로 접속하기만 하면 됩니다. 별도로 설치할 프로그램은 없습니다.</p>
+    </div>
+    <ol class="numbered points reveal reveal-d1">
+      <li><span class="n brass">1</span><div><h3 class="h3">회사 계정으로 한 번 로그인합니다</h3><p>처음 접속하면 로그인 화면이 나옵니다. 한 번 로그인하면 다른 사내 서비스도 다시 로그인하지 않고 쓸 수 있습니다.</p></div></li>
+      <li><span class="n">2</span><div><h3 class="h3">게이트웨이가 권한을 확인합니다</h3><p>게이트웨이는 요청마다 로그인한 사람이 누구인지, 이 서비스에 접속해도 되는지 확인합니다.</p></div></li>
+      <li><span class="n">3</span><div><h3 class="h3">권한이 확인된 사람만 서비스를 씁니다</h3><p>권한이 있는 사람의 요청만 서비스로 전달됩니다. 권한이 없으면 안내 페이지가 표시됩니다.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="prod-title">
+  <div class="wrap">
+    <div class="head head--stack reveal">
+      <p class="kicker">두 제품</p>
+      <h2 id="prod-title" class="h1">따로 쓸 수도 있고<br>함께 쓸 수도 있습니다</h2>
+    </div>
+    <div class="prods">
+      <article class="tile prod prod--gw reveal">
+        <svg class="prod__half" aria-hidden="true"><use href="#half-gw"/></svg>
+        <h3 class="prod__name">Symbolon Gateway</h3>
+        <p class="prod__sub">심볼론 게이트웨이 · 사내 서비스용 게이트웨이</p>
+        <p class="prod__one">사내 웹 서비스에 사내 도메인과 HTTPS를 적용하고, 요청마다 로그인 여부와 접근 권한을 확인한 뒤 서비스로 전달합니다.</p>
+        <ul class="ticks">
+          <li>서비스를 등록하고 사내 도메인을 연결하면 인증서는 자동으로 발급·갱신됩니다.</li>
+          <li>서비스와 경로마다 로그인 여부, 허용 그룹, 2단계 인증 요구를 정합니다.</li>
+          <li>변경 승인과 되돌리기, 실시간 모니터링, 감사 기록을 지원합니다.</li>
+        </ul>
+        <div class="prod__foot"><span><b>단독으로 쓸 때</b> 이미 쓰고 있는 표준 OIDC 로그인 서버에 연결합니다</span><a class="btn btn--ghost btn--sm" href="gateway.html">자세히 보기</a></div>
+      </article>
+      <article class="tile prod prod--id reveal reveal-d1">
+        <svg class="prod__half" aria-hidden="true"><use href="#half-id"/></svg>
+        <h3 class="prod__name">Symbolon ID</h3>
+        <p class="prod__sub">심볼론 ID · 로그인(SSO) 서버</p>
+        <p class="prod__one">회사의 사용자와 그룹을 한곳에서 관리합니다. 사용자는 한 번 로그인하면 여러 사내 서비스를 쓸 수 있습니다.</p>
+        <ul class="ticks">
+          <li>사용자와 그룹을 관리하고, 비밀번호에 인증 앱을 더한 2단계 인증을 지원합니다.</li>
+          <li>로그인 화면과 사용자가 직접 쓰는 내 계정 화면을 제공합니다.</li>
+          <li>표준 OIDC를 지원하므로 다른 사내 제품도 바로 연결할 수 있습니다.</li>
+        </ul>
+        <div class="prod__foot"><span><b>단독으로 쓸 때</b> 사내 제품들이 함께 쓰는 로그인 서버가 됩니다</span><a class="btn btn--ghost btn--sm" href="id.html">자세히 보기</a></div>
+      </article>
+    </div>
+    <div class="tile together reveal">
+      <p class="together__t"><svg aria-hidden="true"><use href="#symbol"/></svg>두 제품을 함께 쓰면</p>
+      <p><b>연동 설정을 따로 하지 않아도 됩니다</b>서비스에 로그인을 켜면 Symbolon ID 쪽 설정이 자동으로 만들어집니다.</p>
+      <p><b>그룹을 검색해서 고릅니다</b>접근 정책을 만들 때 Symbolon ID에 있는 그룹을 바로 찾아 지정할 수 있습니다.</p>
+      <p><b>로그아웃이 모든 서비스에 반영됩니다</b>Symbolon ID에서 로그아웃하거나 계정을 비활성화하면 모든 사내 서비스에서 함께 로그아웃됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep sec--tight" aria-labelledby="console-title">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <p class="kicker">실시간 모니터링</p>
+      <h2 id="console-title" class="h1">어느 서비스에 요청이<br>몰리는지 바로 보입니다</h2>
+      <p class="lead">Symbolon Gateway 콘솔에서 서비스별 요청량과 오류, 거부된 접근을 실시간에 가깝게 확인할 수 있습니다. 아래 화면은 요청의 흐름을 3D로 보여 주는 트래픽 맵입니다.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame frame--glow">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway 콘솔 · 트래픽 맵</span></div>
+        {{img link name="console-traffic3d-canvas" variant="dark" alt="콘솔의 트래픽 맵. 사용자 요청이 게이트웨이 그룹 세 곳을 거쳐 조직별 서비스로 흐르는 모습을 3D 그래픽으로 보여 줍니다."}}
+      </div>
+      <figcaption class="figcap"><b>예시 데이터.</b> 견본 데이터를 넣어 찍은 콘솔 화면입니다. 3D 그래픽을 쓸 수 없는 환경에서는 2D 화면으로 표시됩니다.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="feat-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">주요 기능</p>
+        <h2 id="feat-title" class="h1">등록부터 접근 정책까지<br>콘솔 하나에서 관리합니다</h2>
+      </div>
+      <p class="lead">서비스 등록, 접근 정책, 변경 승인, 로그인 서버 연동, 모니터링을 모두 Symbolon Gateway 콘솔에서 처리합니다.</p>
+    </div>
+    <div class="bento">
+      <article class="tile b-4 r-2 reveal">
+        <h3 class="h2">서비스와 경로마다 접근 정책</h3>
+        <p>로그인이 필요한지, 어느 그룹에 허용할지, 2단계 인증을 요구할지를 서비스와 경로 단위로 정합니다. 조직 단위로 정한 정책은 그 아래 서비스가 이어받습니다.</p>
+        <div class="tile__shot">{{img link name="console-policies" alt="접근 정책 화면. 조직, 서비스, 경로별로 접근 방식, 허용 그룹, 인증 수준이 표로 정리되어 있고, 로그인 서버에 없는 그룹을 알려 주는 경고가 위에 표시됩니다."}}</div>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tile__icon">{{include name="i-cert"}}</span>
+        <h3 class="h3">인증서 자동 관리</h3>
+        <p>서비스 인증서는 자동으로 발급되고 만료되기 전에 갱신됩니다.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d2">
+        <span class="tile__icon tile__icon--id">{{include name="i-logout"}}</span>
+        <h3 class="h3">한 번에 로그아웃</h3>
+        <p>퇴사자의 계정을 비활성화하면 모든 사내 서비스에서 함께 로그아웃됩니다.</p>
+      </article>
+      <article class="tile tile--solid b-3 reveal">
+        <span class="tile__icon">{{include name="i-branch"}}</span>
+        <h3 class="h3">승인을 거치는 변경</h3>
+        <p>운영 환경의 변경은 작성자가 아닌 다른 관리자가 확인하고 승인해야 반영됩니다. 문제가 생기면 이전 상태로 바로 되돌릴 수 있습니다.</p>
+      </article>
+      <article class="tile b-3 reveal reveal-d1">
+        <span class="tile__icon">{{include name="i-activity"}}</span>
+        <h3 class="h3">감사 기록</h3>
+        <p>누가 언제 무엇을 바꿨는지 기록으로 남고, 기록이 변조되지 않았는지 콘솔에서 확인할 수 있습니다.</p>
+      </article>
+    </div>
+    <p class="mt-m reveal"><a href="gateway.html">Symbolon Gateway 기능 전체 보기</a></p>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="deploy-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">배포와 권장 사양</p>
+        <h2 id="deploy-title" class="h1">설치 방식별<br>검증 상태를 알려 드립니다</h2>
+      </div>
+      <p class="lead">1.0 베타에서 처음부터 끝까지 검증한 구성은 장비 한 대에 설치하는 평가판뿐입니다. 다른 설치 방식은 필요한 파일과 안내 문서를 준비해 두었지만, 실제 서버에서는 아직 검증하지 않았습니다.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point point--gw"><span class="tag tag--ok">검증 완료</span><h3 class="h3 mt-s">평가판</h3><p>장비 한 대에 두 제품과 견본 서비스를 함께 설치해 직접 써 볼 수 있습니다.</p></div>
+      <div class="point"><span class="tag tag--warn">검증 전</span><h3 class="h3 mt-s">가상 머신 · 물리 서버</h3><p>서버에 서비스로 등록하는 데 필요한 파일을 제공합니다.</p></div>
+      <div class="point"><span class="tag tag--warn">검증 전</span><h3 class="h3 mt-s">컨테이너</h3><p>컨테이너 이미지를 만드는 데 필요한 파일을 제공합니다.</p></div>
+      <div class="point"><span class="tag tag--plan">구성 안내</span><h3 class="h3 mt-s">Kubernetes</h3><p>권장 배치를 문서로 안내합니다.</p></div>
+    </div>
+    <a class="tile tile--glow sizing-teaser mt-l reveal" href="deployment.html#sizing">
+      <span class="sizing-teaser__t"><span class="kicker mt-0">규모별 권장 사양</span><span class="h3">동시 사용자 1천 명부터 10만 명 이상까지 네 단계로 나눴습니다</span><span class="cap">1.0 베타 기준 산정치입니다. Linux 서버 실측과 고객 PoC에서 확정합니다.</span></span>
+      <span class="sizing-teaser__chips" aria-hidden="true"><span>S</span><span>M</span><span>L</span><span>XL</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="sec-title">
+  <div class="wrap split split--even">
+    <div class="reveal">
+      <p class="kicker">보안 원칙</p>
+      <h2 id="sec-title" class="h1">확인할 수 없는 요청은<br>통과시키지 않습니다</h2>
+      <ul class="ticks">
+        <li>장애로 로그인이나 권한을 확인할 수 없으면 요청을 막고 안내 페이지를 보여 줍니다.</li>
+        <li>게이트웨이는 관리 서버가 서명한 설정만 적용합니다.</li>
+        <li>관리자 계정은 두 제품 모두 2단계 인증을 거쳐야 쓸 수 있습니다.</li>
+        <li>관리 작업은 모두 감사 기록으로 남습니다.</li>
+      </ul>
+      <div class="btn-row mt-m"><a class="btn btn--ghost" href="security.html">보안 원칙 자세히 보기</a></div>
+    </div>
+    <div class="tile tile--solid tile--glow reveal reveal-d1">
+      <p class="quote">독립 보안 리뷰, 세 차례의 수정과 수정 재검증을 거쳤으며, 출시 시점 기준 알려진 높은 심각도 이상의 문제는 없습니다. 상세는 요청 시 제공합니다.</p>
+      <p class="cap mt-m">취약점이 전혀 없다거나 보안 인증을 받았다는 뜻은 아닙니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="beta-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">1.0 베타</p>
+        <h2 id="beta-title" class="h1">지금은 평가와 검증을<br>위한 베타입니다</h2>
+      </div>
+      <p class="lead">주요 기능은 실제 프로그램을 실행하는 자동 시험과 브라우저 시험으로 확인했습니다. 다만 시험은 모두 macOS 장비 한 대에서 진행했고, Linux 서버와 여러 대로 구성한 환경은 아직 확인하지 않았습니다.</p>
+    </div>
+    <div class="tile reveal">
+      <h3 class="h3">베타 이후에 검토하는 기능</h3>
+      <div class="pills mt-m"><span class="pill">사내 DNS 연동</span><span class="pill">관리 서버 이중화</span><span class="pill">LDAP · Active Directory</span><span class="pill">SAML · 보안 키 로그인</span><span class="pill">설치 패키지</span></div>
+      <p class="cap mt-s">일정은 시험 결과를 보고 정한 뒤 알려 드리겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">도입을 검토하고 계신가요?</h2>
+    <p class="lead">제품소개서를 먼저 읽어 보시고, 궁금한 점이나 평가판 사용 문의는 GitHub 이슈로 남겨 주세요.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">문의하기</a>
+      <a class="btn btn--ghost" href="resources.html">자료 보기</a>
+    </div>
+  </div>
+</section>

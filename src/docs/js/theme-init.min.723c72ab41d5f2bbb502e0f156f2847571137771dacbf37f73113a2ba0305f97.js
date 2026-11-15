@@ -1,0 +1,1 @@
+(function(){var e,t=document.documentElement;t.classList.add("js"),e=null;try{e=window.localStorage.getItem("symbolon-theme")}catch{e=null}e!=="light"&&e!=="dark"&&(e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),t.setAttribute("data-theme",e)})()

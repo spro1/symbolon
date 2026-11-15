@@ -1,0 +1,56 @@
+# GitHub Pages 배포: main에 push하거나 수동 실행하면 사이트를 빌드해 올린다.
+# 저장소 설정 > Pages > Source 는 "GitHub Actions"여야 한다.
+# 모든 action은 릴리스 태그의 커밋 SHA로 고정했다(태그는 주석). 올릴 때는 새 릴리스의 SHA로 바꾼다.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    env:
+      SITE_URL: https://spro1.github.io/symbolon
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # 공개용 문서(src/docs/, 미리 빌드해 커밋한 정적 파일)는 build.py가 dist/docs/ 로 복사한다.
+      # 여기서는 문서를 빌드하지 않는다(추가 도구·브라우저 설치 없음).
+      - name: Build site (python3 stdlib only; fails on broken internal links)
+        run: |
+          python3 --version
+          python3 build.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+          include-hidden-files: true # .nojekyll
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

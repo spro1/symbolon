@@ -1,0 +1,116 @@
+<!--meta {"title": "Symbolon ID · Sign-in server for company accounts and groups", "description": "Symbolon ID manages your company's users and groups in one place and lets people use many internal services with a single sign-in. Supports standard OIDC.", "nav": "id"} -->
+<section class="sec ink page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero__grid">
+    <div class="reveal">
+      <img class="lockup" src="{{root}}brand/symbolon-id-on-dark.svg" alt="Symbolon ID" width="256" height="38">
+      <h1 id="page-title" class="h1">One company account<br>for every internal service</h1>
+      <p class="lead">Symbolon ID is a sign-in server that manages your company's users and groups in one place. Users sign in once to use many services, and administrators manage accounts and access in one place. It also works without Symbolon Gateway.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="about.html#contact">Contact</a>
+        <a class="btn btn--ghost" href="resources.html">Get the product overview</a>
+      </div>
+    </div>
+    <svg class="page-hero__mark" aria-hidden="true"><use href="#half-id"/></svg>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="login-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker kicker--id">Users</p>
+      <h2 id="login-title" class="h1">Users manage<br>their own accounts</h2>
+      <p class="lead">Users change passwords, set up two-step verification and get new recovery codes on their own “My account” page, which means fewer requests for administrators.</p>
+      <ul class="ticks">
+        <li>Two-step verification with an authenticator app on a phone.</li>
+        <li>One-time recovery codes in case the authenticator app is lost.</li>
+        <li>Passwords that are too short or too common are rejected.</li>
+        <li>Repeated failed sign-ins are limited automatically.</li>
+      </ul>
+    </div>
+    <div class="id-pair reveal reveal-d1">
+      <figure class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID · Sign in</span></div>
+        {{img name="id-login" alt="Symbolon ID sign-in page (Korean interface) with username and password fields and a sign-in button."}}
+      </figure>
+      <figure class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID · My account</span></div>
+        {{img name="id-account" alt="Symbolon ID account page (Korean interface) showing username, name, email, authentication level, two-step verification status, and buttons to change the password and set up two-step verification."}}
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="admin-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">Administrators</p>
+        <h2 id="admin-title" class="h1">Manage users and groups<br>in one place</h2>
+      </div>
+      <p class="lead">Add users and create groups in the admin console. The same groups are used in Symbolon Gateway access policies and in the permission settings of other internal products.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID admin console · Users</span></div>
+        {{img link name="id-users" alt="Users screen of the Symbolon ID admin console: a table of username, name, email, status and two-step verification, with a form to add users below."}}
+      </div>
+      <figcaption class="figcap">A real screen with made-up users (Korean interface).</figcaption>
+    </figure>
+    <figure class="stage tilt mt-xl">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID admin console · Groups</span></div>
+        {{img link name="id-groups" alt="Groups screen of the Symbolon ID admin console: group name, description and member count, with a form to create a group."}}
+      </div>
+    </figure>
+    <div class="points mt-l reveal">
+      <div class="point point--id"><h3 class="h3">Two-step verification for admins</h3><p>Only administrators with two-step verification set up can use the admin console. Granting or removing admin rights is recorded separately.</p></div>
+      <div class="point point--id"><h3 class="h3">Connect other systems</h3><p>Let systems such as HR tools look up users and groups, with an allowed scope set for each connected system.</p></div>
+      <div class="point point--id"><h3 class="h3">Audit log</h3><p>Sign-ins and administrative actions are recorded for later review.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="std-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">Standards</p>
+        <h2 id="std-title" class="h1">Standard OIDC, so other<br>products can connect too</h2>
+      </div>
+      <p class="lead">Internal products that don't go through Symbolon Gateway can connect to Symbolon ID directly if they support OIDC, so users sign in with the same account.</p>
+    </div>
+    <div class="bento">
+      <article class="tile b-2 reveal">
+        <span class="tile__icon tile__icon--id">{{include name="i-key"}}</span>
+        <h3 class="h3">Web apps and servers</h3>
+        <p>Supports web services that users sign in to, as well as server-to-server calls with no user involved.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tile__icon tile__icon--id">{{include name="i-lock"}}</span>
+        <h3 class="h3">Tokens per service</h3>
+        <p>Each token is issued for a specific service. A token issued for one service can't be used with another.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d2">
+        <span class="tile__icon tile__icon--id">{{include name="i-logout"}}</span>
+        <h3 class="h3">Sign-out propagation</h3>
+        <p>When a user signs out or an account is disabled, connected services are told so the user is signed out there too.</p>
+      </article>
+    </div>
+    <div class="tile tile--dashed mt-l reveal">
+      <h3 class="h3">Not yet supported in the beta</h3>
+      <p class="body small mt-s">LDAP and Active Directory integration, SAML and security key (WebAuthn) sign-in are not supported yet. They are under consideration after the beta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">No shared sign-in<br>yet?</h2>
+    <p class="lead">Start by setting up company sign-in with Symbolon ID, then put Symbolon Gateway in front of your internal services.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">Contact</a>
+      <a class="btn btn--ghost" href="gateway.html">See Symbolon Gateway</a>
+    </div>
+  </div>
+</section>

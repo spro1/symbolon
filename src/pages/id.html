@@ -1,0 +1,116 @@
+<!--meta {"title": "Symbolon ID · 회사 계정과 그룹을 관리하는 로그인 서버", "description": "Symbolon ID는 회사의 사용자와 그룹을 한곳에서 관리하고, 한 번 로그인하면 여러 사내 서비스를 쓸 수 있게 하는 로그인(SSO) 서버입니다. 표준 OIDC를 지원합니다.", "nav": "id"} -->
+<section class="sec ink page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero__grid">
+    <div class="reveal">
+      <img class="lockup" src="brand/symbolon-id-ko-on-dark.svg" alt="Symbolon ID 심볼론 ID" width="210" height="38">
+      <h1 id="page-title" class="h1">회사 계정 하나로<br>여러 사내 서비스에 로그인합니다</h1>
+      <p class="lead">Symbolon ID는 회사의 사용자와 그룹을 관리하는 로그인 서버입니다. 사용자는 한 번 로그인하면 여러 서비스를 쓸 수 있고, 관리자는 계정과 권한을 한곳에서 관리합니다. Symbolon Gateway 없이 단독으로도 쓸 수 있습니다.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="about.html#contact">문의하기</a>
+        <a class="btn btn--ghost" href="resources.html">제품소개서 받기</a>
+      </div>
+    </div>
+    <svg class="page-hero__mark" aria-hidden="true"><use href="#half-id"/></svg>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="login-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker kicker--id">사용자</p>
+      <h2 id="login-title" class="h1">계정 관리는<br>사용자가 직접 합니다</h2>
+      <p class="lead">비밀번호 변경, 2단계 인증 등록, 복구 코드 재발급을 사용자가 “내 계정” 화면에서 직접 처리합니다. 그만큼 관리자에게 들어오는 요청이 줄어듭니다.</p>
+      <ul class="ticks">
+        <li>스마트폰 인증 앱으로 2단계 인증을 쓸 수 있습니다.</li>
+        <li>인증 앱을 잃어버렸을 때를 대비해 일회용 복구 코드를 발급합니다.</li>
+        <li>너무 짧거나 흔한 비밀번호는 쓸 수 없습니다.</li>
+        <li>로그인 실패가 반복되면 자동으로 제한합니다.</li>
+      </ul>
+    </div>
+    <div class="id-pair reveal reveal-d1">
+      <figure class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID · 로그인</span></div>
+        {{img name="id-login" alt="Symbolon ID 로그인 화면. 사용자 이름과 비밀번호 입력란, 로그인 버튼."}}
+      </figure>
+      <figure class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID · 내 계정</span></div>
+        {{img name="id-account" alt="Symbolon ID 내 계정 화면. 사용자 이름, 이름, 이메일, 인증 수준, 2단계 인증 상태와 비밀번호 변경, 2단계 인증 등록 버튼."}}
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="admin-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">관리자</p>
+        <h2 id="admin-title" class="h1">사용자와 그룹을<br>한곳에서 관리합니다</h2>
+      </div>
+      <p class="lead">관리 콘솔에서 사용자를 등록하고 그룹을 만듭니다. 여기서 만든 그룹은 Symbolon Gateway의 접근 정책이나 다른 사내 제품의 권한 설정에서 그대로 쓰입니다.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID 관리 콘솔 · 사용자</span></div>
+        {{img link name="id-users" alt="Symbolon ID 관리 콘솔의 사용자 화면. 사용자 이름, 이름, 이메일, 상태, 2단계 인증 등록 여부가 표로 표시되고 아래에 사용자 등록 양식이 있습니다."}}
+      </div>
+      <figcaption class="figcap">가상의 사용자를 등록해 찍은 실제 화면입니다.</figcaption>
+    </figure>
+    <figure class="stage tilt mt-xl">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon ID 관리 콘솔 · 그룹</span></div>
+        {{img link name="id-groups" alt="Symbolon ID 관리 콘솔의 그룹 화면. 그룹 이름, 설명, 멤버 수 목록과 그룹 생성 양식."}}
+      </div>
+    </figure>
+    <div class="points mt-l reveal">
+      <div class="point point--id"><h3 class="h3">관리자는 2단계 인증 필수</h3><p>관리 콘솔은 2단계 인증을 등록한 관리자만 쓸 수 있습니다. 관리자 권한을 주거나 뺀 기록은 따로 남습니다.</p></div>
+      <div class="point point--id"><h3 class="h3">다른 시스템과 연동</h3><p>인사 시스템처럼 사용자와 그룹 정보가 필요한 시스템을 연결할 수 있습니다. 시스템마다 조회할 수 있는 범위를 따로 정합니다.</p></div>
+      <div class="point point--id"><h3 class="h3">감사 기록</h3><p>로그인과 관리 작업은 감사 기록으로 남아 나중에 확인할 수 있습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="std-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">표준 지원</p>
+        <h2 id="std-title" class="h1">표준 OIDC를 지원해<br>다른 제품도 연결할 수 있습니다</h2>
+      </div>
+      <p class="lead">Symbolon Gateway를 거치지 않는 사내 제품도 OIDC를 지원한다면 Symbolon ID에 직접 연결해 같은 계정으로 로그인하게 할 수 있습니다.</p>
+    </div>
+    <div class="bento">
+      <article class="tile b-2 reveal">
+        <span class="tile__icon tile__icon--id">{{include name="i-key"}}</span>
+        <h3 class="h3">웹과 서버 모두 지원</h3>
+        <p>사용자가 로그인하는 웹 서비스와, 사람 없이 서버끼리 호출하는 경우를 모두 지원합니다.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tile__icon tile__icon--id">{{include name="i-lock"}}</span>
+        <h3 class="h3">서비스별 토큰</h3>
+        <p>토큰은 받을 서비스를 지정해서 발급합니다. 한 서비스용으로 받은 토큰은 다른 서비스에서 쓸 수 없습니다.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d2">
+        <span class="tile__icon tile__icon--id">{{include name="i-logout"}}</span>
+        <h3 class="h3">로그아웃 전파</h3>
+        <p>로그아웃하거나 계정을 비활성화하면 연결된 서비스에도 알려서 함께 로그아웃되게 합니다.</p>
+      </article>
+    </div>
+    <div class="tile tile--dashed mt-l reveal">
+      <h3 class="h3">베타에서 아직 지원하지 않는 것</h3>
+      <p class="body small mt-s">LDAP와 Active Directory 연동, SAML, 보안 키(WebAuthn) 로그인은 아직 지원하지 않습니다. 베타 이후에 검토합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">공통 로그인이<br>아직 없다면</h2>
+    <p class="lead">Symbolon ID로 회사 로그인을 먼저 갖추고, 사내 서비스에는 Symbolon Gateway를 적용하는 방식으로 시작할 수 있습니다.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">문의하기</a>
+      <a class="btn btn--ghost" href="gateway.html">Symbolon Gateway 보기</a>
+    </div>
+  </div>
+</section>

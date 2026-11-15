@@ -1,0 +1,115 @@
+<!--meta {"title": "Deployment and sizing · Symbolon", "description": "What has been tested for each way of installing Symbolon Gateway and Symbolon ID, and recommended sizing by concurrent users (1.0 beta estimates).", "nav": "deploy"} -->
+<section class="sec ink page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero__grid">
+    <div class="reveal">
+      <p class="kicker">Deployment and sizing</p>
+      <h1 id="page-title" class="h1">Installed on<br>your own servers</h1>
+      <p class="lead">Both products are installed on servers you run. They fit virtual machines, containers and Kubernetes, and work on internal networks without internet access. For each option, we state plainly how far it was tested in 1.0 beta.</p>
+      <nav class="anchor-nav" aria-label="On this page">
+        <a href="#options">Install options</a><a href="#sizing">Sizing</a><a href="#prepare">What you need</a>
+      </nav>
+    </div>
+    <svg class="page-hero__mark" aria-hidden="true"><use href="#mark"/></svg>
+  </div>
+</section>
+
+<section class="sec paper" id="options" aria-labelledby="status-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Install options and test status</p>
+        <h2 id="status-title" class="h1">The evaluation install is<br>tested end to end</h2>
+      </div>
+      <p class="lead">In 1.0 beta, the only setup tested end to end is the evaluation install on a single machine. The other options come with the files and documentation you need, but have not been tested on real servers yet.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="table--stack">
+        <caption class="visually-hidden">What each install option includes and its test status</caption>
+        <thead><tr><th scope="col">Option</th><th scope="col">Status</th><th scope="col">What's included</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Evaluation install</th><td data-label="Status"><span class="tag tag--ok">Tested</span></td><td data-label="What's included">A script that installs both products and a sample service on one machine. For trying the features, not for production.</td></tr>
+          <tr><th scope="row">Virtual machines · physical servers</th><td data-label="Status"><span class="tag tag--warn">Not yet tested</span></td><td data-label="What's included">systemd service files to run the gateway as a system service. Not yet tested on real servers.</td></tr>
+          <tr><th scope="row">Containers</th><td data-label="Status"><span class="tag tag--warn">Not yet tested</span></td><td data-label="What's included">The files needed to build container images. Building and running the images has not been tested yet.</td></tr>
+          <tr><th scope="row">Kubernetes</th><td data-label="Status"><span class="tag tag--plan">Guide</span></td><td data-label="What's included">A recommended layout in the documentation. Manifests and a Helm chart are not provided yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap mt-s">Testing on Linux servers and in multi-server setups has not been done yet. Management server redundancy and installation packages are under consideration after the beta.</p>
+    <div class="points mt-l reveal">
+      <div class="point"><h3 class="h3">Start with the evaluation install</h3><p>We suggest installing the evaluation on one machine, checking the features, then applying it to one less sensitive service first.</p></div>
+      <div class="point"><h3 class="h3">A gateway group per environment</h3><p>If you have several environments, such as a data center and a cloud, give each one a gateway group and point service domains at the right group.</p></div>
+      <div class="point"><h3 class="h3">Installation help</h3><p>Customers evaluating Symbolon receive guidance on production layouts together with the installation documents.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" id="sizing" aria-labelledby="sizing-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Recommended sizing</p>
+        <h2 id="sizing-title" class="h1">Size the gateway by<br>concurrent users</h2>
+      </div>
+      <p class="lead">Four tiers based on the number of users at the busiest time. Minimum is enough to handle that load. Recommended leaves headroom so service continues if one server stops.</p>
+    </div>
+    <p class="estimate reveal"><span class="tag tag--warn">Estimate</span>1.0 beta estimates — conservatively set at 50% of measurements on a single macOS machine; to be confirmed on Linux servers and in customer PoCs.</p>
+    <ol class="tiers reveal reveal-d1">
+      <li class="tier">
+        <p class="tier__name"><span class="tier__code">S</span>Small</p>
+        <p class="tier__users"><b>~1,000</b> concurrent users</p>
+        <dl class="tier__facts"><div><dt>Peak requests/s</dt><dd>500</dd></div><div><dt>Domains</dt><dd>Up to 50</dd></div></dl>
+        <dl class="tier__spec"><div><dt>Minimum</dt><dd>1 × 2 vCPU / 2 GB</dd></div><div class="rec"><dt>Recommended</dt><dd>2 × 2 vCPU / 2 GB</dd></div></dl>
+      </li>
+      <li class="tier">
+        <p class="tier__name"><span class="tier__code">M</span>Medium</p>
+        <p class="tier__users"><b>~10,000</b> concurrent users</p>
+        <dl class="tier__facts"><div><dt>Peak requests/s</dt><dd>5,000</dd></div><div><dt>Domains</dt><dd>Up to 200</dd></div></dl>
+        <dl class="tier__spec"><div><dt>Minimum</dt><dd>2 × 2 vCPU / 4 GB</dd></div><div class="rec"><dt>Recommended</dt><dd>2 × 4 vCPU / 4 GB</dd></div></dl>
+      </li>
+      <li class="tier tier--hi">
+        <p class="tier__name"><span class="tier__code">L</span>Large</p>
+        <p class="tier__users"><b>~50,000</b> concurrent users</p>
+        <dl class="tier__facts"><div><dt>Peak requests/s</dt><dd>25,000</dd></div><div><dt>Domains</dt><dd>Up to 1,000</dd></div></dl>
+        <dl class="tier__spec"><div><dt>Minimum</dt><dd>3 × 4 vCPU / 8 GB</dd></div><div class="rec"><dt>Recommended</dt><dd>3 × 8 vCPU / 8 GB</dd></div></dl>
+      </li>
+      <li class="tier">
+        <p class="tier__name"><span class="tier__code">XL</span>Extra large</p>
+        <p class="tier__users"><b>100,000+</b> concurrent users</p>
+        <dl class="tier__facts"><div><dt>Peak requests/s</dt><dd>50,000+</dd></div><div><dt>Domains</dt><dd>Up to 2,000 per gateway group</dd></div></dl>
+        <dl class="tier__spec"><div><dt>Minimum</dt><dd>3 × 8 vCPU / 16 GB</dd></div><div class="rec"><dt>Recommended</dt><dd>5 × 8 vCPU / 16 GB</dd></div></dl>
+      </li>
+    </ol>
+    <p class="cap mt-s">Gateway sizing is shown as “number of servers × size of each server”. At L and XL, memory runs short before CPU, so we recommend generous memory.</p>
+    <p class="cap mt-s">Sizing for Symbolon ID, the management server and the database is available on request for customers evaluating Symbolon.</p>
+  </div>
+</section>
+
+<section class="sec paper" id="prepare" aria-labelledby="prepare-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">What you need</p>
+        <h2 id="prepare-title" class="h1">What to prepare<br>before installing</h2>
+      </div>
+      <p class="lead">You prepare the items below in your environment. Detailed requirements come with the installation documents.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point"><h3 class="h3">Servers and a database</h3><p>Servers for the gateway, the management server and Symbolon ID, plus a database server for them to use.</p></div>
+      <div class="point"><h3 class="h3">Internal DNS</h3><p>You create the DNS records that point service domains at the gateway.</p></div>
+      <div class="point"><h3 class="h3">Certificate trust</h3><p>Install the product's CA certificate on user PCs so browsers trust the certificates it issues.</p></div>
+      <div class="point"><h3 class="h3">Network setup</h3><p>Set up the network so internal services accept only requests that come through the gateway.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">Not sure what fits<br>your environment?</h2>
+    <p class="lead">Tell us your number of users and services and your environment, and we'll work out a suitable setup with you. Open a GitHub issue to get started.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">Contact</a>
+      <a class="btn btn--ghost" href="resources.html">Resources</a>
+    </div>
+  </div>
+</section>

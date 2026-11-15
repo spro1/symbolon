@@ -1,0 +1,232 @@
+<!--meta {"title": "Symbolon · Gateway and sign-in server for internal services", "description": "Symbolon Gateway handles HTTPS, sign-in and group-based access in front of internal web services. Symbolon ID manages company accounts and groups. Currently in 1.0 beta.", "nav": ""} -->
+<section class="sec ink hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="reveal">
+      <p class="hero__names"><b>Symbolon Gateway</b> &nbsp; <b>Symbolon ID</b></p>
+      <h1 id="hero-title" class="display display--sm">Sign-in for<br>internal services,<br><span class="l2">no code changes</span></h1>
+      <p class="lead">Symbolon Gateway sits in front of your internal web services and handles HTTPS addresses, sign-in and group-based access for them. Manage company accounts and groups with Symbolon ID, or connect the sign-in server you already use.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="gateway.html">See the products</a>
+        <a class="btn btn--ghost" href="resources.html">Get the product overview</a>
+      </div>
+      <p class="hero__beta"><span class="pill">1.0 beta</span>The current version is a beta for evaluation and testing.</p>
+    </div>
+    <div class="token-art" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">What changes</p>
+        <h2 id="why-title" class="h1">One place to manage sign-in<br>for all your internal tools</h2>
+      </div>
+      <p class="lead">Internal tools and dashboards are often reached directly by server address. Some have no sign-in at all, others each have their own accounts, so it is hard to see who can reach what.</p>
+    </div>
+    <div class="urls reveal reveal-d1">
+      <p class="urlbar urlbar--before">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ff9a88" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4.5M12 17.2v.1"/></svg>
+        <span class="addr">http://server-address:port</span>
+        <span class="tags"><span>No encryption</span><span>Anyone with the address gets in</span><span>Separate sign-in per tool</span></span>
+      </p>
+      <p class="bridge"><svg viewBox="0 0 12 42" preserveAspectRatio="none" aria-hidden="true"><path d="M6,0 L6,42" fill="none" stroke="#5fe0d2" stroke-width="1.4"/></svg>With Symbolon Gateway</p>
+      <p class="urlbar urlbar--after">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5fe0d2" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+        <span class="addr">https://dashboard.corp.example</span>
+        <span class="tags"><span>HTTPS</span><span>Allowed groups only</span><span>One sign-in with a company account</span></span>
+      </p>
+    </div>
+    <div class="points mt-xl reveal reveal-d2">
+      <div class="point"><h3 class="h3">Internal domains and HTTPS</h3><p>Each service gets an internal domain and opens over HTTPS. Certificates are issued automatically and renewed before they expire.</p></div>
+      <div class="point"><h3 class="h3">Group-based access</h3><p>Choose which groups may use each service. Only members of those groups can get in.</p></div>
+      <div class="point"><h3 class="h3">No changes to your services</h3><p>The gateway handles sign-in and access checks, so you don't have to build sign-in into each service.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">How it works</p>
+        <h2 id="how-title" class="h1">From sign-in<br>to service</h2>
+      </div>
+      <p class="lead">Users open the internal address as usual. There is nothing to install.</p>
+    </div>
+    <ol class="numbered points reveal reveal-d1">
+      <li><span class="n brass">1</span><div><h3 class="h3">Sign in once with a company account</h3><p>The first visit shows the sign-in page. After that, other internal services open without signing in again.</p></div></li>
+      <li><span class="n">2</span><div><h3 class="h3">The gateway checks access</h3><p>On every request, the gateway checks who the user is and whether they may use this service.</p></div></li>
+      <li><span class="n">3</span><div><h3 class="h3">Only verified users reach the service</h3><p>Only requests from users with access are passed on. Everyone else sees a notice page.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="prod-title">
+  <div class="wrap">
+    <div class="head head--stack reveal">
+      <p class="kicker">Two products</p>
+      <h2 id="prod-title" class="h1">Use them separately<br>or together</h2>
+    </div>
+    <div class="prods">
+      <article class="tile prod prod--gw reveal">
+        <svg class="prod__half" aria-hidden="true"><use href="#half-gw"/></svg>
+        <h3 class="prod__name">Symbolon Gateway</h3>
+        <p class="prod__sub">Gateway for internal services</p>
+        <p class="prod__one">Opens internal web services on HTTPS addresses and checks sign-in and access on every request before passing it on.</p>
+        <ul class="ticks">
+          <li>Service registration, internal domains, automatic certificates</li>
+          <li>Sign-in, allowed groups and two-step verification per service and path</li>
+          <li>Approved changes with rollback, live monitoring, audit log</li>
+        </ul>
+        <div class="prod__foot"><span><b>On its own</b> connects to the standard OIDC sign-in server you already use</span><a class="btn btn--ghost btn--sm" href="gateway.html">Learn more</a></div>
+      </article>
+      <article class="tile prod prod--id reveal reveal-d1">
+        <svg class="prod__half" aria-hidden="true"><use href="#half-id"/></svg>
+        <h3 class="prod__name">Symbolon ID</h3>
+        <p class="prod__sub">Sign-in (SSO) server</p>
+        <p class="prod__one">Manages your company's users and groups in one place and lets people use many services with a single sign-in.</p>
+        <ul class="ticks">
+          <li>Users and groups, passwords and two-step verification with an authenticator app</li>
+          <li>Sign-in and account pages for end users</li>
+          <li>Standard OIDC, so other internal products can connect directly</li>
+        </ul>
+        <div class="prod__foot"><span><b>On its own</b> becomes the shared sign-in server for your internal products</span><a class="btn btn--ghost btn--sm" href="id.html">Learn more</a></div>
+      </article>
+    </div>
+    <div class="tile together reveal">
+      <p class="together__t"><svg aria-hidden="true"><use href="#symbol"/></svg>Used together</p>
+      <p><b>Setup is automatic</b>Turn on sign-in for a service and the matching Symbolon ID settings are created for you.</p>
+      <p><b>Pick groups by search</b>When you write an access policy, find groups in Symbolon ID and select them directly.</p>
+      <p><b>Sign-out applies everywhere</b>Signing out of Symbolon ID, or disabling an account, signs the user out of every internal service.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep sec--tight" aria-labelledby="console-title">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <p class="kicker">Live monitoring</p>
+      <h2 id="console-title" class="h1">See which services<br>are getting the traffic</h2>
+      <p class="lead">The Symbolon Gateway console shows requests, errors and denied access per service in near real time. Below is the traffic map, which shows request flow in 3D.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame frame--glow">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway console · Traffic map</span></div>
+        {{img link name="console-traffic3d-canvas" variant="dark" alt="The console's traffic map. User requests flow through three gateway groups to services grouped by organization, shown in 3D."}}
+      </div>
+      <figcaption class="figcap"><b>Sample data.</b> A console screen with sample data. Where 3D graphics aren't available, a 2D view is shown.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="feat-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Features</p>
+        <h2 id="feat-title" class="h1">From registration to access policy,<br>all in one console</h2>
+      </div>
+      <p class="lead">Register services, set access policies, approve changes, connect sign-in servers and monitor traffic in the Symbolon Gateway console.</p>
+    </div>
+    <div class="bento">
+      <article class="tile b-4 r-2 reveal">
+        <h3 class="h2">Access policy per service and path</h3>
+        <p>Decide per service and path whether sign-in is required, which groups are allowed and whether two-step verification is needed. Policies set for an organization apply to the services under it.</p>
+        <div class="tile__shot">{{img link name="console-policies" alt="Access policy screen. A table of access mode, allowed groups and authentication level per organization, service and path, with a warning about groups missing from the sign-in server."}}</div>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tile__icon">{{include name="i-cert"}}</span>
+        <h3 class="h3">Automatic certificates</h3>
+        <p>Service certificates are issued automatically and renewed before they expire.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d2">
+        <span class="tile__icon tile__icon--id">{{include name="i-logout"}}</span>
+        <h3 class="h3">Sign out everywhere</h3>
+        <p>Disable an account, for example when someone leaves, and they are signed out of every internal service.</p>
+      </article>
+      <article class="tile tile--solid b-3 reveal">
+        <span class="tile__icon">{{include name="i-branch"}}</span>
+        <h3 class="h3">Changes go through approval</h3>
+        <p>Production changes take effect only after another administrator reviews and approves them. If something goes wrong, roll back to the previous state.</p>
+      </article>
+      <article class="tile b-3 reveal reveal-d1">
+        <span class="tile__icon">{{include name="i-activity"}}</span>
+        <h3 class="h3">Audit log</h3>
+        <p>Every change is recorded with who made it and when, and you can verify in the console that the log hasn't been altered.</p>
+      </article>
+    </div>
+    <p class="mt-m reveal"><a href="gateway.html">All Symbolon Gateway features</a></p>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="deploy-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Deployment and sizing</p>
+        <h2 id="deploy-title" class="h1">We state what has been<br>tested for each option</h2>
+      </div>
+      <p class="lead">In 1.0 beta, the only setup tested end to end is the evaluation install on a single machine. The other options come with the files and guides you need, but they have not been tested on real servers yet.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point point--gw"><span class="tag tag--ok">Tested</span><h3 class="h3 mt-s">Evaluation install</h3><p>Installs both products and a sample service on one machine so you can try them.</p></div>
+      <div class="point"><span class="tag tag--warn">Not yet tested</span><h3 class="h3 mt-s">Virtual machines · physical servers</h3><p>Includes the files needed to run as a system service.</p></div>
+      <div class="point"><span class="tag tag--warn">Not yet tested</span><h3 class="h3 mt-s">Containers</h3><p>Includes the files needed to build container images.</p></div>
+      <div class="point"><span class="tag tag--plan">Guide</span><h3 class="h3 mt-s">Kubernetes</h3><p>A recommended layout is described in the documentation.</p></div>
+    </div>
+    <a class="tile tile--glow sizing-teaser mt-l reveal" href="deployment.html#sizing">
+      <span class="sizing-teaser__t"><span class="kicker mt-0">Recommended sizing</span><span class="h3">Four tiers, from 1,000 to more than 100,000 concurrent users</span><span class="cap">1.0 beta estimates, to be confirmed on Linux servers and in customer PoCs.</span></span>
+      <span class="sizing-teaser__chips" aria-hidden="true"><span>S</span><span>M</span><span>L</span><span>XL</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="sec-title">
+  <div class="wrap split split--even">
+    <div class="reveal">
+      <p class="kicker">Security principles</p>
+      <h2 id="sec-title" class="h1">Requests that can't be verified<br>don't get through</h2>
+      <ul class="ticks">
+        <li>If an outage prevents checking sign-in or access, the request is blocked and a notice page is shown.</li>
+        <li>The gateway applies only configuration signed by the management server.</li>
+        <li>Administrator accounts in both products require two-step verification.</li>
+        <li>Every administrative action is recorded in the audit log.</li>
+      </ul>
+      <div class="btn-row mt-m"><a class="btn btn--ghost" href="security.html">Read the security principles</a></div>
+    </div>
+    <div class="tile tile--solid tile--glow reveal reveal-d1">
+      <p class="quote">An independent security review, three rounds of fixes and re-verification are complete; as of release there are no known issues of high severity or above. Details on request.</p>
+      <p class="cap mt-m">This does not mean there are no vulnerabilities or that the products hold a security certification.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="beta-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">1.0 beta</p>
+        <h2 id="beta-title" class="h1">A beta for<br>evaluation and testing</h2>
+      </div>
+      <p class="lead">The main features are covered by automated tests that run the real programs and by tests in a real browser. All testing so far was done on a single macOS machine; Linux servers and multi-server setups have not been tested yet.</p>
+    </div>
+    <div class="tile reveal">
+      <h3 class="h3">Under consideration after the beta</h3>
+      <div class="pills mt-m"><span class="pill">Web application firewall · rate limiting</span><span class="pill">Internal DNS integration</span><span class="pill">Management server redundancy</span><span class="pill">LDAP · Active Directory</span><span class="pill">SAML · security key sign-in</span><span class="pill">Installation packages</span></div>
+      <p class="cap mt-s">We will announce a schedule once test results are in.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">Evaluating Symbolon?</h2>
+    <p class="lead">Start with the product overview. For questions or to try the evaluation install, open a GitHub issue.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">Contact</a>
+      <a class="btn btn--ghost" href="resources.html">Resources</a>
+    </div>
+  </div>
+</section>

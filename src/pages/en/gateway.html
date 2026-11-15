@@ -1,0 +1,202 @@
+<!--meta {"title": "Symbolon Gateway · Gateway for internal services", "description": "Symbolon Gateway handles HTTPS, sign-in and group-based access in front of internal web services. Register services, set access policies, approve changes and monitor traffic in one console.", "nav": "gateway"} -->
+<section class="sec ink page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero__grid">
+    <div class="reveal">
+      <img class="lockup" src="{{root}}brand/symbolon-gateway-on-dark.svg" alt="Symbolon Gateway" width="361" height="38">
+      <h1 id="page-title" class="h1">Sign-in and access checks<br>for your internal services</h1>
+      <p class="lead">Symbolon Gateway sits in front of your internal web services. It opens them on HTTPS addresses and, on every request, checks who the user is and whether they have access before passing the request on. You don't need to change the services.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="about.html#contact">Contact</a>
+        <a class="btn btn--ghost" href="resources.html">Get the product overview</a>
+      </div>
+    </div>
+    <svg class="page-hero__mark" aria-hidden="true"><use href="#half-gw"/></svg>
+  </div>
+</section>
+
+<section class="sec ink ink--deep sec--tight" aria-labelledby="noc-title">
+  <div class="wrap">
+    <figure class="stage tilt">
+      <div class="frame frame--glow">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway console · Wall display</span></div>
+        {{img link name="console-noc" variant="dark" alt="Wall display. Current requests per second and recent trend, bandwidth, concurrent connections, error rate, response time, the busiest services and anomalies from the last five minutes on one screen." eager}}
+      </div>
+      <figcaption class="figcap"><b id="noc-title">Wall display</b> is a full-screen view for the large screen in an operations room. Anomalies with the same cause are grouped into one. <b>Sample data.</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="register-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Service registration</p>
+        <h2 id="register-title" class="h1">Enter an address and a domain<br>to register a service</h2>
+      </div>
+      <p class="lead">Enter the service's internal address and the internal domain to use, and the registration screen walks you through the rest. Certificates are issued automatically and renewed before they expire.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway console · Register service</span></div>
+        {{img link name="console-wizard" alt="Service registration screen in four steps: basics, domain, access, review. The first step selects the organization, environment, service name and gateway group."}}
+      </div>
+    </figure>
+    <figure class="stage tilt mt-xl">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway console · Services</span></div>
+        {{img link name="console-services" alt="Service list showing each service's domain, environment, gateway group, access mode, sign-in server sync status and deployment status."}}
+      </div>
+      <figcaption class="figcap">See the access mode and deployment status of every service on one screen. <b>Sample data.</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="policy-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">Access policy</p>
+      <h2 id="policy-title" class="h1">Decide who can reach<br>what</h2>
+      <ul class="ticks">
+        <li>Choose per service whether users must sign in, or whether it is an API called with tokens only.</li>
+        <li>Choose the groups allowed in. Sensitive paths, such as admin pages, can have their own policy.</li>
+        <li>Require two-step verification again for important paths.</li>
+        <li>Policies set for an organization or environment apply to the services under it.</li>
+        <li>Before a policy takes effect, check whether a given user would get in.</li>
+      </ul>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Security · Access policies</span></div>
+        {{img link name="console-policies" variant="dark" alt="Access policy screen listing access mode, allowed groups and authentication level per scope, with a warning about groups missing from the sign-in server."}}
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="change-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Change management</p>
+        <h2 id="change-title" class="h1">Changes are checked and approved<br>before they take effect</h2>
+      </div>
+      <p class="lead">Services and policies aren't edited in place. Changes are grouped, checked and then applied, which makes it harder to widen access by mistake.</p>
+    </div>
+    <ol class="flow reveal reveal-d1">
+      <li><span class="dot">1</span><h3 class="h3">Draft</h3><p>Collect changes such as a new service or an added group.</p></li>
+      <li><span class="dot">2</span><h3 class="h3">Check</h3><p>Find domain or policy conflicts and groups that don't exist before anything is applied.</p></li>
+      <li class="on"><span class="dot">3</span><h3 class="h3">Approve</h3><p>Production changes are approved by an administrator other than the author.</p></li>
+      <li><span class="dot">4</span><h3 class="h3">Deploy</h3><p>Approved changes are applied to every gateway.</p></li>
+      <li><span class="dot">5</span><h3 class="h3">Roll back</h3><p>If something goes wrong, return to the previous state right away.</p></li>
+    </ol>
+    <div class="bento mt-l">
+      <article class="tile b-2 reveal">
+        <span class="tag tag--warn">Changes that widen access</span>
+        <h3 class="h3 mt-s">Need a security officer's approval</h3>
+        <p>Changes that widen access, such as turning off sign-in or adding an allowed group, take effect only after a security officer approves them.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tag tag--ok">Changes that narrow access</span>
+        <h3 class="h3 mt-s">Can go out right away in an emergency</h3>
+        <p>Changes that block access, such as turning on sign-in or removing a group, can be applied immediately without approval, with a reason recorded.</p>
+      </article>
+      <article class="tile tile--solid b-2 reveal reveal-d2">
+        <p class="stat"><span class="num mint">5</span></p>
+        <h3 class="h3 mt-s">Console roles</h3>
+        <p>Split the work between platform administrators, security officers, organization administrators, service operators and auditors.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="idp-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">Sign-in server integration</p>
+        <h2 id="idp-title" class="h1">Works with Symbolon ID<br>out of the box</h2>
+      </div>
+      <p class="lead">With Symbolon ID, the settings needed to connect the two are created for you. You can also connect a standard OIDC sign-in server you already use.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point point--id"><h3 class="h3">Settings created for you</h3><p>Turn on sign-in for a service and the Symbolon ID settings are created automatically. Settings that drift are corrected regularly.</p></div>
+      <div class="point point--id"><h3 class="h3">Group search</h3><p>Search Symbolon ID's groups while writing an access policy. You are warned if a policy uses a group that was deleted.</p></div>
+      <div class="point point--id"><h3 class="h3">Sign-out everywhere</h3><p>Signing out of Symbolon ID, or disabling an account, signs the user out of every internal service.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep" aria-labelledby="mon-title">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <p class="kicker">Monitoring</p>
+      <h2 id="mon-title" class="h1">See allowed and denied<br>requests as they happen</h2>
+      <p class="lead">The dashboard shows total requests and how many were allowed, sent to sign-in or denied. Denied requests are recorded with the user, path and reason.</p>
+    </div>
+    <div class="mon-pair mon-pair--even">
+      <figure class="reveal">
+        <div class="frame">{{img link name="console-dashboard-live" variant="dark" alt="Live traffic area of the dashboard: requests per minute and the last hour's trend, allowed, sent to sign-in and denied counts, error rate and response time."}}</div>
+        <figcaption class="figcap"><b>Sample data.</b> The live traffic area of the dashboard.</figcaption>
+      </figure>
+      <figure class="reveal reveal-d1">
+        <div class="frame">{{img link name="console-service-monitoring" variant="dark" alt="Monitoring tab of a service: requests per second, error rate, response time, bytes sent and a 60-minute chart."}}</div>
+        <figcaption class="figcap"><b>Sample data.</b> Requests and response times for the last 60 minutes, per service.</figcaption>
+      </figure>
+    </div>
+    <div class="points mt-l reveal">
+      <div class="point point--gw"><h3 class="h3">Traffic map</h3><p>Shows which services requests are flowing to. Color it by requests, error rate, response time or denied access.</p></div>
+      <div class="point point--gw"><h3 class="h3">Anomaly alerts</h3><p>The console raises an alert when errors or response times rise well above normal.</p></div>
+      <div class="point"><h3 class="h3">Audit log</h3><p>Every administrative action is recorded, and you can verify in the console that the log hasn't been altered.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="user-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">For users</p>
+      <h2 id="user-title" class="h1">Sign in once,<br>then work as usual</h2>
+      <ol class="numbered mt-l">
+        <li><span class="n">1</span><div><h3 class="h3">Sign in once</h3><p>Opening an internal address shows the company sign-in page.</p></div></li>
+        <li><span class="n">2</span><div><h3 class="h3">Other services open directly</h3><p>Once signed in, other internal services open without the sign-in page.</p></div></li>
+        <li><span class="n">3</span><div><h3 class="h3">A notice page without access</h3><p>Without access, users see a notice page. The request ID on it helps an administrator find the cause.</p></div></li>
+      </ol>
+    </div>
+    <figure class="reveal reveal-d1">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>https://app.corp.example/</span></div>
+        {{img name="gw-forbidden" alt="Access denied notice page (in Korean), asking the user to contact the service administrator with the request ID shown below."}}
+      </div>
+      <figcaption class="figcap">The notice page shown when a user doesn't have access (Korean interface).</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="ops-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Operations</p>
+        <h2 id="ops-title" class="h1">Arrange it to fit<br>your environment</h2>
+      </div>
+      <p class="lead">Symbolon Gateway can be used on its own. You can even start with internal domains and HTTPS only, without sign-in.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point"><h3 class="h3">Gateway groups</h3><p>Run services with different security levels or network zones on separate gateway groups.</p></div>
+      <div class="point"><h3 class="h3">Uninterrupted access</h3><p>Users can keep using internal services while the management server is under maintenance.</p></div>
+      <div class="point"><h3 class="h3">Separate admin accounts</h3><p>The console uses its own administrator accounts, so you can still manage the gateway if the sign-in server has a problem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">Try it first<br>on a single machine</h2>
+    <p class="lead">The evaluation install puts both products and a sample service on one machine. To try it, open a GitHub issue.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">Contact</a>
+      <a class="btn btn--ghost" href="deployment.html">Deployment and sizing</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,202 @@
+<!--meta {"title": "Symbolon Gateway · 사내 서비스용 게이트웨이", "description": "Symbolon Gateway는 사내 웹 서비스에 HTTPS와 로그인, 그룹별 접근 권한을 적용하는 게이트웨이입니다. 서비스 등록, 접근 정책, 변경 승인, 모니터링을 콘솔 하나에서 관리합니다.", "nav": "gateway"} -->
+<section class="sec ink page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero__grid">
+    <div class="reveal">
+      <img class="lockup" src="brand/symbolon-gateway-ko-on-dark.svg" alt="Symbolon Gateway 심볼론 게이트웨이" width="292" height="38">
+      <h1 id="page-title" class="h1">사내 서비스의 로그인과<br>접근 권한을 대신 처리합니다</h1>
+      <p class="lead">Symbolon Gateway는 사내 웹 서비스 앞에 두는 게이트웨이입니다. 서비스에 사내 도메인과 HTTPS를 적용하고, 요청마다 누가 로그인했는지, 접근 권한이 있는지 확인한 뒤 서비스로 전달합니다. 서비스 코드는 고치지 않아도 됩니다.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="about.html#contact">문의하기</a>
+        <a class="btn btn--ghost" href="resources.html">제품소개서 받기</a>
+      </div>
+    </div>
+    <svg class="page-hero__mark" aria-hidden="true"><use href="#half-gw"/></svg>
+  </div>
+</section>
+
+<section class="sec ink ink--deep sec--tight" aria-labelledby="noc-title">
+  <div class="wrap">
+    <figure class="stage tilt">
+      <div class="frame frame--glow">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway 콘솔 · 관제 모드</span></div>
+        {{img link name="console-noc" variant="dark" alt="관제 모드 화면. 현재 초당 요청 수와 최근 추이, 대역폭, 동시 연결, 오류율, 응답 시간, 요청이 많은 서비스 순위, 최근 5분의 이상 징후가 한 화면에 표시됩니다." eager}}
+      </div>
+      <figcaption class="figcap"><b id="noc-title">관제 모드</b>는 상황실의 큰 화면에 띄워 두고 보는 전체 화면 보기입니다. 같은 원인으로 함께 생긴 이상 징후는 한 건으로 묶어서 보여 줍니다. <b>예시 데이터.</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="register-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">서비스 등록</p>
+        <h2 id="register-title" class="h1">주소와 도메인만 넣으면<br>서비스가 등록됩니다</h2>
+      </div>
+      <p class="lead">등록 화면에서 서비스의 내부 주소와 사용할 사내 도메인을 입력하면, 나머지 설정은 단계별로 안내합니다. 인증서는 자동으로 발급되고 만료되기 전에 알아서 갱신됩니다.</p>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway 콘솔 · 서비스 등록</span></div>
+        {{img link name="console-wizard" alt="서비스 등록 화면. 기본 정보, 도메인, 접근 인증, 검토의 네 단계로 나뉘어 있고, 첫 단계에서 조직, 환경, 서비스 이름, 게이트웨이 그룹을 고릅니다."}}
+      </div>
+    </figure>
+    <figure class="stage tilt mt-xl">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway 콘솔 · 서비스</span></div>
+        {{img link name="console-services" alt="서비스 목록. 서비스마다 도메인, 환경, 게이트웨이 그룹, 접근 방식, 로그인 서버 연동 상태, 배포 상태가 표시됩니다."}}
+      </div>
+      <figcaption class="figcap">등록한 서비스마다 접근 방식과 배포 상태를 한 화면에서 확인합니다. <b>예시 데이터.</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="policy-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">접근 정책</p>
+      <h2 id="policy-title" class="h1">누가 어디에 접속할 수<br>있는지 정합니다</h2>
+      <ul class="ticks">
+        <li>서비스마다 로그인이 필요한지, 토큰으로만 호출하는 API인지 정합니다.</li>
+        <li>접속을 허용할 그룹을 지정합니다. 관리자 페이지처럼 민감한 경로에는 따로 정책을 둘 수 있습니다.</li>
+        <li>중요한 경로에는 2단계 인증을 한 번 더 요구할 수 있습니다.</li>
+        <li>조직이나 환경 단위로 정한 정책은 그 아래 서비스가 이어받습니다.</li>
+        <li>정책을 반영하기 전에 특정 사용자가 접속할 수 있는지 미리 확인해 볼 수 있습니다.</li>
+      </ul>
+    </div>
+    <figure class="stage tilt">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>Symbolon Gateway 콘솔 · 접근 정책</span></div>
+        {{img link name="console-policies" variant="dark" alt="접근 정책 화면. 범위별 접근 방식, 허용 그룹, 인증 수준 목록과, 로그인 서버에 없는 그룹을 알려 주는 경고."}}
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="change-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">변경 관리</p>
+        <h2 id="change-title" class="h1">설정 변경은 확인과 승인을<br>거쳐 반영됩니다</h2>
+      </div>
+      <p class="lead">서비스와 정책은 바로 고치지 않고, 바꿀 내용을 하나로 묶어 확인한 뒤 반영합니다. 그래서 실수로 접근 권한을 넓히는 일을 줄일 수 있습니다.</p>
+    </div>
+    <ol class="flow reveal reveal-d1">
+      <li><span class="dot">1</span><h3 class="h3">작성</h3><p>서비스 등록이나 허용 그룹 추가처럼 바꿀 내용을 모읍니다.</p></li>
+      <li><span class="dot">2</span><h3 class="h3">검증</h3><p>도메인이나 정책이 서로 충돌하지 않는지, 지정한 그룹이 실제로 있는지 반영 전에 확인합니다.</p></li>
+      <li class="on"><span class="dot">3</span><h3 class="h3">승인</h3><p>운영 환경의 변경은 작성자가 아닌 다른 관리자가 승인합니다.</p></li>
+      <li><span class="dot">4</span><h3 class="h3">배포</h3><p>승인된 변경이 모든 게이트웨이에 반영됩니다.</p></li>
+      <li><span class="dot">5</span><h3 class="h3">되돌리기</h3><p>문제가 생기면 이전 상태로 바로 되돌립니다.</p></li>
+    </ol>
+    <div class="bento mt-l">
+      <article class="tile b-2 reveal">
+        <span class="tag tag--warn">접근을 넓히는 변경</span>
+        <h3 class="h3 mt-s">보안 담당자의 승인이 필요합니다</h3>
+        <p>로그인 해제나 허용 그룹 추가처럼 접근 범위를 넓히는 변경은 보안 담당자가 승인해야 반영됩니다.</p>
+      </article>
+      <article class="tile b-2 reveal reveal-d1">
+        <span class="tag tag--ok">접근을 좁히는 변경</span>
+        <h3 class="h3 mt-s">긴급하면 바로 반영합니다</h3>
+        <p>로그인을 켜거나 그룹을 빼는 것처럼 접근을 막는 변경은 사유를 남기고 승인 없이 바로 반영할 수 있습니다.</p>
+      </article>
+      <article class="tile tile--solid b-2 reveal reveal-d2">
+        <p class="stat"><span class="num mint">5</span></p>
+        <h3 class="h3 mt-s">콘솔 역할</h3>
+        <p>플랫폼 관리자, 보안 담당자, 조직 관리자, 서비스 운영자, 감사자로 권한을 나눠 맡깁니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="idp-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker kicker--id">로그인 서버 연동</p>
+        <h2 id="idp-title" class="h1">Symbolon ID와는<br>자동으로 연동됩니다</h2>
+      </div>
+      <p class="lead">Symbolon ID와 함께 쓰면 관리자가 연동 설정을 따로 만들지 않아도 됩니다. 이미 쓰고 있는 표준 OIDC 로그인 서버에 연결할 수도 있습니다.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point point--id"><h3 class="h3">설정 자동 생성</h3><p>서비스에 로그인을 켜면 Symbolon ID 쪽 설정이 자동으로 만들어지고, 설정이 어긋나면 주기적으로 다시 맞춥니다.</p></div>
+      <div class="point point--id"><h3 class="h3">그룹 검색</h3><p>접근 정책을 만들 때 Symbolon ID에 있는 그룹을 검색해서 고릅니다. 삭제된 그룹을 쓰는 정책이 있으면 알려 줍니다.</p></div>
+      <div class="point point--id"><h3 class="h3">로그아웃 반영</h3><p>Symbolon ID에서 로그아웃하거나 계정을 비활성화하면 모든 사내 서비스에서 함께 로그아웃됩니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep" aria-labelledby="mon-title">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <p class="kicker">모니터링</p>
+      <h2 id="mon-title" class="h1">허용과 거부를<br>실시간으로 확인합니다</h2>
+      <p class="lead">대시보드에서는 전체 요청량과 함께 허용된 요청, 로그인 화면으로 보낸 요청, 거부된 요청이 각각 몇 건인지 볼 수 있습니다. 거부된 접근은 사용자와 경로, 거부 사유가 함께 기록됩니다.</p>
+    </div>
+    <div class="mon-pair mon-pair--even">
+      <figure class="reveal">
+        <div class="frame">{{img link name="console-dashboard-live" variant="dark" alt="대시보드의 실시간 트래픽 영역. 분당 요청 수와 최근 한 시간 추이, 허용, 로그인 이동, 접근 거부 건수, 오류율과 응답 시간이 표시됩니다."}}</div>
+        <figcaption class="figcap"><b>예시 데이터.</b> 대시보드의 실시간 트래픽 영역입니다.</figcaption>
+      </figure>
+      <figure class="reveal reveal-d1">
+        <div class="frame">{{img link name="console-service-monitoring" variant="dark" alt="서비스 상세 화면의 모니터링 탭. 초당 요청 수, 오류율, 응답 시간, 송신량과 최근 60분 그래프."}}</div>
+        <figcaption class="figcap"><b>예시 데이터.</b> 서비스별로 최근 60분의 요청과 응답 시간을 볼 수 있습니다.</figcaption>
+      </figure>
+    </div>
+    <div class="points mt-l reveal">
+      <div class="point point--gw"><h3 class="h3">트래픽 맵</h3><p>요청이 어느 서비스로 흐르는지 그림으로 보여 줍니다. 요청 수, 오류율, 응답 시간, 접근 거부 중 하나를 골라 볼 수 있습니다.</p></div>
+      <div class="point point--gw"><h3 class="h3">이상 징후 알림</h3><p>평소보다 오류나 응답 시간이 크게 늘면 콘솔에 알림을 띄웁니다.</p></div>
+      <div class="point"><h3 class="h3">감사 기록</h3><p>관리 작업은 모두 기록으로 남고, 기록이 변조되지 않았는지 콘솔에서 검증할 수 있습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="user-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">사용자 입장에서</p>
+      <h2 id="user-title" class="h1">한 번 로그인하고<br>평소처럼 일합니다</h2>
+      <ol class="numbered mt-l">
+        <li><span class="n">1</span><div><h3 class="h3">처음 한 번만 로그인합니다</h3><p>사내 주소로 접속하면 회사 로그인 화면이 나옵니다.</p></div></li>
+        <li><span class="n">2</span><div><h3 class="h3">다른 서비스는 바로 열립니다</h3><p>이미 로그인했다면 다른 사내 서비스도 로그인 화면 없이 열립니다.</p></div></li>
+        <li><span class="n">3</span><div><h3 class="h3">권한이 없으면 안내 페이지가 나옵니다</h3><p>안내 페이지에 표시된 요청 ID를 관리자에게 알려 주면 관리자가 원인을 찾을 수 있습니다.</p></div></li>
+      </ol>
+    </div>
+    <figure class="reveal reveal-d1">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span>https://app.corp.example/</span></div>
+        {{img name="gw-forbidden" alt="접근 권한이 없습니다 안내 페이지. 서비스 관리자에게 요청 ID와 함께 문의하라는 문구와 요청 ID가 표시됩니다."}}
+      </div>
+      <figcaption class="figcap">접속 권한이 없을 때 표시되는 안내 페이지입니다.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec ink" aria-labelledby="ops-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">운영</p>
+        <h2 id="ops-title" class="h1">작게 시작해서<br>환경에 맞게 나눠 운영합니다</h2>
+      </div>
+      <p class="lead">Symbolon Gateway만 단독으로 써도 됩니다. 로그인 없이 사내 도메인과 HTTPS만 적용하는 것부터 시작할 수도 있습니다.</p>
+    </div>
+    <div class="points reveal reveal-d1">
+      <div class="point"><h3 class="h3">게이트웨이 그룹</h3><p>보안 수준이나 네트워크 구역이 다른 서비스는 게이트웨이 그룹을 나눠 따로 운영할 수 있습니다.</p></div>
+      <div class="point"><h3 class="h3">끊기지 않는 서비스 접속</h3><p>관리 서버를 점검하는 동안에도 사용자는 사내 서비스에 계속 접속할 수 있습니다.</p></div>
+      <div class="point"><h3 class="h3">독립된 관리자 계정</h3><p>콘솔은 로그인 서버와 별개의 관리자 계정을 씁니다. 로그인 서버에 문제가 생겨도 게이트웨이는 계속 관리할 수 있습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec ink ink--deep cta" aria-labelledby="cta-title">
+  <div class="wrap reveal">
+    <svg class="cta__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <h2 id="cta-title" class="h1">장비 한 대로<br>먼저 써 보실 수 있습니다</h2>
+    <p class="lead">평가판은 두 제품과 견본 서비스를 장비 한 대에 함께 설치합니다. 평가판 사용을 원하시면 GitHub 이슈로 문의해 주세요.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="about.html#contact">문의하기</a>
+      <a class="btn btn--ghost" href="deployment.html">배포와 사양 보기</a>
+    </div>
+  </div>
+</section>
